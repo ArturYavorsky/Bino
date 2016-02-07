@@ -1,46 +1,14 @@
-// var $btn = $('.btn');
-// // var ddbtn = true;
-
-// // alert('hello');
-// console.log($btn);
-
-
-// $(function(){
-// 	btn()
-// })
-
-// function btn(){
-// 	var $hbtn = $('.btn').outerHeight();
-// 	console.log($hbtn);
-// }
-
-// $(function(){
-
-// $('.btn').on('mouseout', function(){
-// 	$('.btn').removeClass('active');
-// 	$(this).addClass('active');
-// })
-
-
-
-// })
-
-
-
 $(function(){
 	owlMain();
 	owlList();
 })
-
-
 
 function owlMain(){
 	$('.owl-main').owlCarousel({
 	    loop:true,
 	  	dots: false,
 	   	nav: true,
-	    items: 1,
-	   
+	    items: 1,	   
 	    autoplayHoverPause: true
 	})
 }
@@ -52,8 +20,6 @@ $('html, body').animate({scrollTop: $(target).offset().top}, 700);
 return false; 
 }); 
 });
-
-
 
 function owlList(){
 	$('.owl-list').owlCarousel({
@@ -82,9 +48,7 @@ if (links[j].className.indexOf("tab") != -1)
 { 
 tabs.push(links[j]); 
 links[j].tabs = tabs; 
-var c = document.getElementById(links[j].href.substr(links[j].href.indexOf("#") + 1)); 
-
-//reset all tabs on start 
+var c = document.getElementById(links[j].href.substr(links[j].href.indexOf("#") + 1));  
 if (c) if (links[j].className.indexOf("active") != -1) c.style.display = "block"; 
 else c.style.display = "none"; 
 
@@ -93,7 +57,6 @@ links[j].onclick = function ()
 var c = document.getElementById(this.href.substr(this.href.indexOf("#") + 1));
 if (c) 
 { 
-//reset all tabs before change 
 for (var i = 0; i < this.tabs.length; i++) 
 { 
 document.getElementById(this.tabs[i].href.substr(this.tabs[i].href.indexOf("#") + 1)).style.display = "none"; 
@@ -114,8 +77,6 @@ if (window.addEventListener)
 window.addEventListener("load", initTabs, false); 
 else if (window.attachEvent) 
 window.attachEvent("onload", initTabs);
-
-
 
 function setEqualHeight(columns) { var tallestcolumn = 0; columns.each( function() { currentHeight = $(this).height(); if(currentHeight > tallestcolumn) { tallestcolumn = currentHeight; } } ); columns.height(tallestcolumn); } $(document).ready(function() { setEqualHeight($(".container > div")); });
 
